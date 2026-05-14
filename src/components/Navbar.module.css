@@ -1,0 +1,84 @@
+.header {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--nav-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+.flagStripe { display: flex; height: 5px; }
+.s1, .s5 { flex: 1; background: #002B7F; }
+.s2, .s4 { flex: 0.55; background: #fff; }
+.s3       { flex: 1.4; background: #CE1126; }
+
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 62px;
+  max-width: 1280px; margin: 0 auto;
+}
+
+.brand {
+  display: flex; align-items: center; gap: 12px;
+  background: none; border: none; cursor: pointer; padding: 0;
+}
+.logo {
+  height: 44px; width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+  transition: transform 0.2s;
+}
+.brand:hover .logo { transform: scale(1.04); }
+
+.brandText { display: flex; flex-direction: column; gap: 1px; text-align: left; }
+.brandMain { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: 0.02em; line-height: 1; transition: color 0.3s; }
+.brandSub  { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
+
+.right { display: flex; align-items: center; gap: 10px; }
+
+.links { display: flex; gap: 4px; }
+.link {
+  padding: 7px 15px; border-radius: 8px; border: none;
+  background: none; color: var(--muted); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 0.18s; white-space: nowrap;
+}
+.link:hover { background: var(--bg3); color: var(--text); }
+.active { background: var(--azul) !important; color: #fff !important; }
+.active:hover { background: var(--azul-claro) !important; }
+
+/* ── THEME TOGGLE ────────────────────── */
+.themeToggle {
+  background: none; border: none; cursor: pointer;
+  padding: 4px; display: flex; align-items: center;
+}
+.toggleTrack {
+  position: relative;
+  display: block;
+  width: 52px; height: 28px;
+  border-radius: 999px;
+  background: #1a2a4a;
+  border: 1px solid rgba(0,43,127,0.4);
+  transition: background 0.3s, border-color 0.3s;
+}
+.trackLight {
+  background: #c8d8ff;
+  border-color: rgba(0,43,127,0.25);
+}
+.toggleThumb {
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--azul);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), background 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.thumbLight {
+  transform: translateX(24px);
+  background: #CE1126;
+}
+.thumbIcon { font-size: 11px; line-height: 1; }
+
+@media (max-width: 900px) { .brandMain { display: none; } }
+@media (max-width: 700px) { .link { padding: 7px 9px; font-size: 12px; } }
+@media (max-width: 560px) { .links { display: none; } }

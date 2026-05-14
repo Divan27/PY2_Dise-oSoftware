@@ -1,0 +1,46 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --azul: #002B7F; --azul-claro: #1a4db8;
+  --rojo: #CE1126; --rojo-claro: #e8293f;
+  --blanco: #FFFFFF;
+  --bg: #05091a; --bg2: #090f24; --bg3: #0f1830;
+  --border: rgba(255,255,255,0.07);
+  --text: #e8edf8; --text2: #94a3b8; --muted: #4a6080; --muted2: #2a3a55;
+  --card-bg: #090f24; --card-hover: rgba(0,43,127,0.35);
+  --hero-bg1: #020a1f; --hero-bg2: #05091a; --hero-grid: rgba(0,43,127,0.08);
+  --input-bg: #0f1830; --result-bg: rgba(0,43,127,0.08); --result-border: rgba(0,43,127,0.25);
+  --nav-bg: rgba(5,9,26,0.92);
+  --success: #10b981; --success-text: #6ee7b7;
+  --tag-azul-bg: rgba(0,43,127,0.2); --tag-azul-fg: #6b9fff;
+  --tag-rojo-bg: rgba(206,17,38,0.15); --tag-rojo-fg: #f87171;
+  --tag-verde-bg: rgba(16,185,129,0.15); --tag-verde-fg: #6ee7b7;
+  --stat-num-color: #fff; --hero-h1-color: #fff;
+  --info-bg: rgba(255,255,255,0.02); --info-border: rgba(255,255,255,0.03);
+  --error-bg: rgba(206,17,38,0.07); --error-border: rgba(206,17,38,0.22); --error-text: #f87171;
+}
+
+[data-theme="light"] {
+  --bg: #f0f4ff; --bg2: #e8eef9; --bg3: #dde5f5;
+  --border: rgba(0,43,127,0.12);
+  --text: #0d1a3a; --text2: #334e7a; --muted: #5a6e90; --muted2: #8ba0c0;
+  --card-bg: #ffffff; --card-hover: rgba(0,43,127,0.12);
+  --hero-bg1: #d6e1f8; --hero-bg2: #e8eef9; --hero-grid: rgba(0,43,127,0.06);
+  --input-bg: #eef2fc; --result-bg: rgba(0,43,127,0.04); --result-border: rgba(0,43,127,0.15);
+  --nav-bg: rgba(240,244,255,0.94);
+  --tag-azul-bg: rgba(0,43,127,0.1); --tag-azul-fg: #002B7F;
+  --tag-rojo-bg: rgba(206,17,38,0.08); --tag-rojo-fg: #9e0d1d;
+  --tag-verde-bg: rgba(16,185,129,0.1); --tag-verde-fg: #047857;
+  --stat-num-color: #002B7F; --hero-h1-color: #0d1a3a;
+  --info-bg: rgba(0,43,127,0.03); --info-border: rgba(0,43,127,0.08);
+  --error-bg: rgba(206,17,38,0.05); --error-border: rgba(206,17,38,0.18); --error-text: #9e0d1d;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--azul); border-radius: 99px; }
+::selection { background: var(--rojo); color: #fff; }
+button { font-family: inherit; }
+input  { font-family: inherit; }

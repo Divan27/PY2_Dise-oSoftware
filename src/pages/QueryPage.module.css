@@ -1,0 +1,70 @@
+.page { max-width: 1280px; margin: 0 auto; padding: 0 2rem 6rem; }
+.wrap { max-width: 700px; margin: 3rem auto; }
+
+.pageHeader { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; }
+.pageIcon { font-size: 2.5rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.pageTitle { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--text); margin-bottom: 6px; line-height: 1.2; transition: color 0.3s; }
+.pageDesc { font-size: 14px; color: var(--muted); line-height: 1.6; transition: color 0.3s; }
+
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: background 0.3s, border-color 0.3s; }
+.cardHeader { padding: 1.5rem 2rem 1.2rem; border-bottom: 1px solid var(--border); background: linear-gradient(135deg, rgba(0,43,127,0.08) 0%, transparent 80%); }
+
+.flagLine { display: flex; height: 4px; border-radius: 99px; overflow: hidden; margin-bottom: 1rem; width: 80px; }
+.fl1, .fl5 { flex: 1; background: #002B7F; }
+.fl2, .fl4 { flex: 0.5; background: #fff; }
+.fl3       { flex: 1.4; background: #CE1126; }
+
+.cardTitle { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--text2); letter-spacing: 0.02em; transition: color 0.3s; }
+.cardBody { padding: 2rem; }
+
+.submitBtn {
+  width: 100%; padding: 15px; background: #002B7F; color: #fff;
+  border: none; border-radius: 12px; font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.submitBtn:hover:not(:disabled) { background: #1a4db8; box-shadow: 0 10px 28px rgba(0,43,127,0.35); transform: translateY(-1px); }
+.submitBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.result {
+  margin-top: 1.75rem; background: var(--result-bg); border: 1px solid var(--result-border);
+  border-radius: 14px; padding: 1.5rem; animation: fadeUp 0.35s ease; transition: background 0.3s, border-color 0.3s;
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+.resultBadge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25);
+  color: var(--success-text); padding: 4px 14px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem;
+}
+.resultName { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--text); margin-bottom: 1.25rem; line-height: 1.2; transition: color 0.3s; }
+.resultGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fullWidth { grid-column: 1 / -1; }
+.rfLabel { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted2); margin-bottom: 3px; transition: color 0.3s; }
+.rfValue { font-size: 14px; color: var(--text); font-weight: 500; transition: color 0.3s; }
+
+.badgeVigente {
+  background: rgba(16,185,129,0.12); color: var(--success-text);
+  border: 1px solid rgba(16,185,129,0.25); padding: 2px 12px;
+  border-radius: 999px; font-size: 12px; font-weight: 700;
+}
+
+.errorBox {
+  margin-top: 1.5rem; background: var(--error-bg); border: 1px solid var(--error-border);
+  border-radius: 12px; padding: 1rem 1.4rem;
+  font-size: 13.5px; color: var(--error-text); line-height: 1.5; animation: fadeUp 0.3s ease;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.infoNote {
+  margin-top: 1.5rem; display: flex; gap: 10px; align-items: flex-start;
+  font-size: 13px; color: var(--muted2); line-height: 1.6;
+  padding: 1rem 1.25rem; background: var(--info-bg);
+  border-radius: 10px; border: 1px solid var(--info-border); transition: all 0.3s;
+}
+
+@media (max-width: 560px) { .resultGrid { grid-template-columns: 1fr; } .cardBody { padding: 1.5rem; } .pageTitle { font-size: 22px; } }
