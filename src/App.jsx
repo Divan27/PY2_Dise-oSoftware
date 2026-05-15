@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Navbar   from './components/Navbar.jsx'
 import Footer   from './components/Footer.jsx'
 import Home     from './pages/Home.jsx'
-import Padron   from './pages/Padron.jsx'
 import Civil    from './pages/Civil.jsx'
 import Noticias from './pages/Noticias.jsx'
 
