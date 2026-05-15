@@ -312,6 +312,107 @@ export default function Home({ setPage }) {
 
         </div>
 
+        {/* DERECHA */}
+        <aside className={styles.rightPanel}>
+
+          {/* INFORMACIÓN NACIONAL */}
+          <div className={styles.sideCard}>
+
+            <h3 className={styles.sideTitle}>
+              Información Nacional
+            </h3>
+
+            <div className={styles.sideGrid}>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>3.5M+</span>
+                <span className={styles.sideLbl}>
+                  Ciudadanos inscritos
+                </span>
+              </div>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>7</span>
+                <span className={styles.sideLbl}>
+                  Provincias
+                </span>
+              </div>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>84</span>
+                <span className={styles.sideLbl}>
+                  Cantones
+                </span>
+              </div>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>6,000+</span>
+                <span className={styles.sideLbl}>
+                  Centros de votación
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* GOBIERNO */}
+          <div className={styles.sideCard}>
+
+            <h3 className={styles.sideTitle}>
+              Gobierno de Costa Rica
+            </h3>
+
+            <div className={styles.sideGrid}>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>1</span>
+                <span className={styles.sideLbl}>
+                  Presidente
+                </span>
+              </div>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>2</span>
+                <span className={styles.sideLbl}>
+                  Vicepresidentes
+                </span>
+              </div>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>57</span>
+                <span className={styles.sideLbl}>
+                  Diputados
+                </span>
+              </div>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>84</span>
+                <span className={styles.sideLbl}>
+                  Alcaldías
+                </span>
+              </div>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>500+</span>
+                <span className={styles.sideLbl}>
+                  Regidores
+                </span>
+              </div>
+
+              <div className={styles.sideItem}>
+                <span className={styles.sideNum}>25+</span>
+                <span className={styles.sideLbl}>
+                  Instituciones públicas
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </aside>
+
       </div>
 
     </main>
