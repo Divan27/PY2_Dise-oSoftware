@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { CIVIL_DATA } from '../data/index.js'
 import CedulaInput from '../components/CedulaInput.jsx'
-import styles from './QueryPage.module.css'
 
 export default function Civil() {
   const [p1, setP1] = useState('')
