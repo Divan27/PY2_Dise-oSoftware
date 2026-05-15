@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { QUICK_SERVICES, NEWS } from '../data/index.js'
+import CedulaInput from '../components/CedulaInput'
 import styles from './Home.module.css'
 
 function HeroBanner({ setPage }) {
@@ -6,6 +8,7 @@ function HeroBanner({ setPage }) {
     <section className={styles.hero}>
       {/* BG layers */}
       <div className={styles.heroBg} />
+      <div className={styles.heroImage} />
       <div className={styles.heroGrid} />
       <div className={styles.heroGlowBlue} />
       <div className={styles.heroGlowRed} />
@@ -22,47 +25,30 @@ function HeroBanner({ setPage }) {
       <div className={styles.heroContent}>
         <div className={styles.heroBadge}>
           <span className={styles.badgeDot} />
-          Sistema Electoral Nacional · Costa Rica
+          6 de febrero 2028 | Votaciones municipales
         </div>
         <h1 className={styles.heroH1}>
-          Democracia <em>transparente</em><br />
-          al servicio del pueblo
+          Democracia fuerte - <em> participación consciente</em><br />
         </h1>
         <p className={styles.heroP}>
           El Tribunal Supremo de Elecciones garantiza la pureza del sufragio
           y la correcta aplicación de las normas electorales de la República de Costa Rica.
         </p>
         <div className={styles.heroActions}>
-          <button className={styles.btnPrimary} onClick={() => setPage('padron')}>
-            <span>🗳️</span> Consultar Padrón
-          </button>
-          <button className={styles.btnSecondary} onClick={() => setPage('civil')}>
-            <span>🪪</span> Datos Civiles
+          <button
+            className={styles.btnPrimary}
+            onClick={() => setPage('civil')}
+          >
+            <span>🪪</span>
+            Consultas Civiles
           </button>
         </div>
       </div>
+      
     </section>
   )
 }
 
-function Stats() {
-  const data = [
-    { num: '3.5M+', lbl: 'Ciudadanos inscritos' },
-    { num: '7',     lbl: 'Provincias cubiertas' },
-    { num: '84',    lbl: 'Cantones del país' },
-    { num: '6,000+', lbl: 'Centros de votación' },
-  ]
-  return (
-    <div className={styles.statsRow}>
-      {data.map(d => (
-        <div key={d.num} className={styles.statCard}>
-          <div className={styles.statNum}>{d.num}</div>
-          <div className={styles.statLbl}>{d.lbl}</div>
-        </div>
-      ))}
-    </div>
-  )
-}
 
 function QuickAccess({ setPage }) {
   return (
@@ -109,11 +95,103 @@ function NewsPreview({ setPage }) {
 
 export default function Home({ setPage }) {
   return (
-    <main className={styles.page}>
-      <HeroBanner setPage={setPage} />
-      <Stats />
-      <QuickAccess setPage={setPage} />
-      <NewsPreview setPage={setPage} />
-    </main>
-  )
+  <main className={styles.page}>
+
+    <div className={styles.mainLayout}>
+
+      {/* IZQUIERDA */}
+      <div className={styles.leftContent}>
+
+        <HeroBanner setPage={setPage} />
+
+        <QuickAccess setPage={setPage} />
+
+        <NewsPreview setPage={setPage} />
+
+      </div>
+
+      {/* DERECHA */}
+      <aside className={styles.rightPanel}>
+
+        <div className={styles.sideCard}>
+
+          <h3 className={styles.sideTitle}>
+            Información Nacional
+          </h3>
+
+          <div className={styles.sideGrid}>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>3.5M+</span>
+              <span className={styles.sideLbl}>Ciudadanos inscritos</span>
+            </div>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>7</span>
+              <span className={styles.sideLbl}>Provincias</span>
+            </div>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>84</span>
+              <span className={styles.sideLbl}>Cantones</span>
+            </div>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>6,000+</span>
+              <span className={styles.sideLbl}>Centros de votación</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className={styles.sideCard}>
+
+          <h3 className={styles.sideTitle}>
+            Gobierno de Costa Rica
+          </h3>
+
+          <div className={styles.sideGrid}>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>1</span>
+              <span className={styles.sideLbl}>Presidente</span>
+            </div>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>2</span>
+              <span className={styles.sideLbl}>Vicepresidentes</span>
+            </div>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>57</span>
+              <span className={styles.sideLbl}>Diputados</span>
+            </div>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>84</span>
+              <span className={styles.sideLbl}>Alcaldías</span>
+            </div>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>500+</span>
+              <span className={styles.sideLbl}>Regidores</span>
+            </div>
+
+            <div className={styles.sideItem}>
+              <span className={styles.sideNum}>25+</span>
+              <span className={styles.sideLbl}>Instituciones públicas</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+)
 }
+
