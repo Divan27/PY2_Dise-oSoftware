@@ -79,7 +79,7 @@
   font-size: 15px; font-weight: 500;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s, background 0.3s, color 0.3s;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 .searchInput::placeholder { color: var(--muted2); }
 .searchInput:focus {
@@ -105,7 +105,7 @@
   background: #002B7F; color: #fff;
   border: none; border-radius: 12px;
   font-size: 14px; font-weight: 700;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   cursor: pointer; transition: all 0.2s;
   white-space: nowrap;
   min-width: 110px; justify-content: center;

@@ -36,7 +36,6 @@ function ResultCardMini({ data }) {
       <div className={styles.miniName}>{nombre}</div>
       <div className={styles.miniGrid}>
         <div className={styles.miniField}><span className={styles.miniLabel}>Cédula</span><span className={styles.miniValue}>{cedula}</span></div>
-        <div className={styles.miniField}><span className={styles.miniLabel}>Tipo</span><span className={styles.miniValue}>{tipo}</span></div>
         <div className={styles.miniField}><span className={styles.miniLabel}>Clase</span><span className={styles.miniValue}>{clase}</span></div>
         {apellido1 && <div className={styles.miniField}><span className={styles.miniLabel}>1er apellido</span><span className={styles.miniValue}>{apellido1}</span></div>}
         {apellido2 && <div className={styles.miniField}><span className={styles.miniLabel}>2do apellido</span><span className={styles.miniValue}>{apellido2}</span></div>}
