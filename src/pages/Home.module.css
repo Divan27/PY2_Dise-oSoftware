@@ -785,3 +785,547 @@
   padding: 12px 16px;
   font-size: 13px;
 }
+
+/* =========================================
+   CERTIFICACIONES DIGITALES
+========================================= */
+
+.certModal {
+
+  width: 100%;
+
+  max-width: 560px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #081120,
+      #101a2d
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 28px;
+
+  padding: 2rem;
+
+  position: relative;
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,0.45);
+
+  overflow: hidden;
+}
+
+.certModal::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -120px;
+  right: -120px;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,43,127,0.28),
+      transparent 70%
+    );
+}
+
+.certModal::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: -120px;
+  left: -120px;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(206,17,38,0.18),
+      transparent 70%
+    );
+}
+
+.certHeader {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 1.6rem;
+}
+
+.certLogo {
+
+  width: 74px;
+
+  height: 74px;
+
+  object-fit: contain;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.05);
+
+  padding: 10px;
+}
+
+.certMini {
+
+  display: block;
+
+  font-size: 11px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  color: #9ab2db;
+
+  margin-bottom: 6px;
+}
+
+.certTitle {
+
+  font-family:
+    'Playfair Display',
+    serif;
+
+  font-size: 2rem;
+
+  font-weight: 800;
+
+  color: #fff;
+
+  line-height: 1.1;
+}
+
+.certText {
+
+  position: relative;
+
+  z-index: 2;
+
+  color: #d7e3ff;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+
+  margin-bottom: 1.7rem;
+}
+
+/* ─────────────────────────────────────────────
+   MODAL DOCUMENTO IDENTIDAD
+───────────────────────────────────────────── */
+
+.identityModal {
+
+  width: 100%;
+
+  max-width: 760px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8,14,28,0.98),
+      rgba(12,20,38,0.98)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 28px;
+
+  padding: 2.2rem;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.45);
+
+  animation: popupFade 0.25s ease;
+}
+
+/* HEADER */
+
+.identityHeader {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+
+  padding-bottom: 1rem;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.06);
+}
+
+/* CONTENIDO */
+
+.identityContent {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+}
+
+.identityText {
+
+  color: #dbe5ff;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  font-weight: 400;
+
+  text-align: justify;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.05);
+
+  border-radius: 18px;
+
+  padding: 1.3rem 1.4rem;
+
+  box-shadow:
+    inset 0 0 20px rgba(255,255,255,0.015);
+}
+
+/* ─────────────────────────────────────────────
+   GALERÍA CÉDULAS
+───────────────────────────────────────────── */
+
+.cedulaGallery {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1.2rem;
+}
+
+.cedulaImg {
+
+  width: 100%;
+
+  height: auto;
+
+  max-height: 240px;
+
+  object-fit: contain;
+
+  aspect-ratio: 1.6 / 1;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,0.035);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  padding: 12px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.28);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.cedulaImg:hover {
+
+  transform: scale(1.03);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.38);
+}
+
+/* ANIMACIÓN */
+
+@keyframes popupFade {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+  .identityModal {
+
+    width: calc(100% - 20px);
+
+    padding: 1.5rem;
+  }
+
+  .identityHeader {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .cedulaGallery {
+
+    grid-template-columns: 1fr;
+  }
+
+  .cedulaImg {
+
+    max-height: 220px;
+  }
+}
+
+/* =========================================
+   MODAL SOBRE EL TSE
+========================================= */
+
+.tseModal {
+  width: 100%;
+  max-width: 540px;
+
+  max-height: 44vh;
+
+  overflow-y: auto;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8,14,28,0.98),
+      rgba(14,22,40,0.98)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 18px;
+
+  padding: 0.8rem;
+
+  position: relative;
+
+  box-shadow:
+    0 14px 38px rgba(0,0,0,0.34);
+
+  backdrop-filter: blur(18px);
+
+  animation: fadeUp 0.25s ease;
+}
+
+/* INTRO */
+
+.tseIntro {
+
+  color: #dbe5ff;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  margin-bottom: 1rem;
+
+  max-width: 100%;
+}
+
+/* GRID */
+
+.tseGrid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 0.7rem;
+
+  align-items: start;
+}
+
+/* TARJETAS */
+
+.tseCard {
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.05);
+
+  border-radius: 16px;
+
+  padding: 0.8rem 0.9rem;
+
+  transition: 0.25s ease;
+
+  position: relative;
+
+  overflow: hidden;
+
+  height: 100%;
+}
+
+/* EFECTO */
+
+.tseCard:hover {
+
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(0,43,127,0.30);
+
+  box-shadow:
+    0 8px 18px rgba(0,43,127,0.14);
+}
+
+/* HEADER */
+
+.cardHeader {
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  color: #ffffff;
+
+  margin-bottom: 0.6rem;
+
+  padding-bottom: 0.45rem;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.05);
+}
+
+/* LISTA */
+
+.tseList {
+
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+
+  display: grid;
+
+  gap: 0.35rem;
+}
+
+.tseList li {
+
+  color: #d8e3ff;
+
+  font-size: 11px;
+
+  line-height: 1.3;
+
+  padding-left: 10px;
+
+  position: relative;
+}
+
+.tseList li::before {
+
+  content: "•";
+
+  position: absolute;
+
+  left: 0;
+
+  color: #CE1126;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+  .tseGrid {
+
+    grid-template-columns: 1fr;
+  }
+
+  .tseModal {
+
+    max-height: 70vh;
+  }
+
+  .tseCard {
+
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .tseModal {
+
+    width: calc(100% - 18px);
+
+    padding: 1rem;
+
+    max-height: 75vh;
+  }
+
+  .tseIntro {
+
+    font-size: 11px;
+  }
+
+  .cardHeader {
+
+    font-size: 11px;
+  }
+
+  .tseList li {
+
+    font-size: 10.5px;
+  }
+}
