@@ -1,0 +1,231 @@
+/* ── página ── */
+.page { max-width: 860px; margin: 0 auto; padding: 2rem 2rem 6rem; }
+
+.wrap { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* ── encabezado ── */
+.pageHeader {
+  display: flex; align-items: flex-start; gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.pageIcon { font-size: 2.4rem; line-height: 1; }
+.pageTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900; color: var(--text); line-height: 1.15;
+  transition: color 0.3s;
+}
+.pageDesc { font-size: 14px; color: var(--muted); margin-top: 4px; transition: color 0.3s; }
+
+/* ── card ── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.cardHeader { }
+
+.flagLine {
+  display: flex; height: 4px;
+}
+.fl1, .fl5 { flex: 1; background: #002B7F; }
+.fl2, .fl4 { flex: 0.5; background: #fff; }
+.fl3       { flex: 1.4; background: #CE1126; }
+
+.cardTitle {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); padding: 1rem 1.5rem 0;
+  transition: color 0.3s;
+}
+
+.cardBody { padding: 1rem 1.5rem 1.5rem; }
+
+/* ── search box ── */
+.searchWrap { margin-bottom: 1.5rem; }
+
+.searchLabel {
+  display: block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.searchRow {
+  display: flex; gap: 10px; align-items: stretch;
+}
+
+.inputWrap {
+  position: relative; flex: 1;
+  display: flex; align-items: center;
+}
+
+.inputIcon {
+  position: absolute; left: 14px;
+  font-size: 16px; pointer-events: none; opacity: 0.5;
+}
+
+.searchInput {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 44px 14px 42px;
+  color: var(--text);
+  font-size: 15px; font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.3s, color 0.3s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.searchInput::placeholder { color: var(--muted2); }
+.searchInput:focus {
+  border-color: #002B7F;
+  box-shadow: 0 0 0 3px rgba(0,43,127,0.18);
+}
+
+.clearBtn {
+  position: absolute; right: 12px;
+  background: none; border: none;
+  color: var(--muted2); font-size: 13px;
+  cursor: pointer; padding: 4px;
+  border-radius: 50%;
+  transition: color 0.15s, background 0.15s;
+  display: flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px;
+}
+.clearBtn:hover { color: var(--text); background: rgba(255,255,255,0.08); }
+
+.submitBtn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0 24px; height: auto;
+  background: #002B7F; color: #fff;
+  border: none; border-radius: 12px;
+  font-size: 14px; font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer; transition: all 0.2s;
+  white-space: nowrap;
+  min-width: 110px; justify-content: center;
+}
+.submitBtn:hover:not(:disabled) {
+  background: #1a4db8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,43,127,0.38);
+}
+.submitBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.hint {
+  margin-top: 8px; font-size: 12px; color: var(--muted2);
+  line-height: 1.5; transition: color 0.3s;
+}
+
+/* ── spinner ── */
+.spinner {
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── resultados ── */
+.resultsSection { margin-top: 0.5rem; }
+
+.resultsBadge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(16,185,129,0.12);
+  border: 1px solid rgba(16,185,129,0.25);
+  color: var(--success-text);
+  padding: 5px 14px; border-radius: 999px;
+  font-size: 12px; font-weight: 700;
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.resultsList {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.resultCard {
+  background: var(--result-bg);
+  border: 1px solid var(--result-border);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.resultName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 800;
+  color: var(--text); margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
+}
+
+.resultGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.75rem 1.25rem;
+}
+
+.resultField { }
+
+.rfLabel {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 3px;
+  transition: color 0.3s;
+}
+
+.rfValue {
+  font-size: 14px; font-weight: 600;
+  color: var(--text); transition: color 0.3s;
+}
+
+.badgeVigente {
+  display: inline-block;
+  background: rgba(16,185,129,0.15);
+  color: var(--success-text);
+  border: 1px solid rgba(16,185,129,0.25);
+  padding: 2px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 700;
+}
+
+/* ── error ── */
+.errorBox {
+  margin-top: 1rem;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error-text);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 13px; font-weight: 500;
+  display: flex; align-items: flex-start; gap: 8px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* ── nota ── */
+.infoNote {
+  display: flex; align-items: flex-start; gap: 8px;
+  background: var(--info-bg);
+  border: 1px solid var(--info-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 12px; color: var(--muted2);
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* ── responsive ── */
+@media (max-width: 560px) {
+  .searchRow { flex-direction: column; }
+  .submitBtn { width: 100%; padding: 14px; }
+  .resultGrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 380px) {
+  .resultGrid { grid-template-columns: 1fr; }
+}

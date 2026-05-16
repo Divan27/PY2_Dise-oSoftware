@@ -670,3 +670,118 @@
     padding: 1.5rem;
   }
 }
+
+/* =========================================
+   POPUP INPUT UNIFICADO
+========================================= */
+
+.popupInputWrap {
+  margin-bottom: 1rem;
+}
+
+.popupInput {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  outline: none;
+  transition: 0.2s ease;
+}
+.popupInput:focus {
+  border-color: #002B7F;
+  box-shadow: 0 0 0 3px rgba(0,43,127,0.25);
+}
+.popupInput::placeholder { color: rgba(255,255,255,0.25); }
+
+/* spinner */
+.spinner {
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.searchBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* =========================================
+   RESULTADOS EN POPUP
+========================================= */
+
+.popupResults {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.popupCount {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6ee7b7;
+  margin-bottom: 4px;
+}
+
+.miniCard {
+  background: rgba(0,43,127,0.12);
+  border: 1px solid rgba(0,43,127,0.28);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+}
+
+.miniName {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.miniGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+}
+
+.miniField {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.miniLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8ea6d9;
+}
+
+.miniValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e8edf8;
+}
+
+/* =========================================
+   ERROR EN POPUP
+========================================= */
+
+.popupError {
+  margin-top: 1rem;
+  background: rgba(206,17,38,0.07);
+  border: 1px solid rgba(206,17,38,0.22);
+  color: #f87171;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+}

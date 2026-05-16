@@ -18,7 +18,6 @@ export default function App() {
   const renderPage = () => {
     switch (page) {
       case 'home':     return <Home setPage={setPage} />
-      case 'padron':   return <Padron />
       case 'civil':    return <Civil />
       case 'noticias': return <Noticias />
       default:         return <Home setPage={setPage} />
