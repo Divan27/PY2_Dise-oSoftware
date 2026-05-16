@@ -214,28 +214,448 @@ function HeroBanner() {
   )
 }
 
+
 // ─── QuickAccess ─────────────────────────────────────────────────────────────
 
 function QuickAccess({ setPage }) {
+
+  const [showCertModal, setShowCertModal] = useState(false)
+
+  const [showCedulaModal, setShowCedulaModal] = useState(false)
+
+  const [showTseModal, setShowTseModal] = useState(false)
+
+  const [certCode, setCertCode] = useState('')
+
+  const services = [
+
+    {
+      icon: '💳',
+      title: 'Certificaciones Digitales',
+      desc: 'Solicite y valide certificaciones oficiales en línea.',
+      page: 'certificaciones'
+    },
+
+    {
+      icon: '🪪',
+      title: 'Documento de Identidad',
+      desc: 'Información y trámites relacionados con la cédula.',
+      page: 'identidad'
+    },
+
+    {
+      icon: '🏛️',
+      title: 'Sobre el TSE',
+      desc: 'Conozca la historia, funciones y organización institucional.',
+      page: 'tse'
+    },
+
+    {
+      icon: '📋',
+      title: 'Servicios del Registro Civil',
+      desc: 'Acceso a servicios y consultas registrales.',
+      page: 'registrocivil'
+    },
+
+    {
+      icon: '🗳️',
+      title: 'Elecciones y Partidos Políticos',
+      desc: 'Información electoral y agrupaciones políticas.',
+      page: 'elecciones'
+    },
+
+    {
+      icon: '⚖️',
+      title: 'Jurisprudencia y Normativa',
+      desc: 'Normativa electoral y resoluciones oficiales.',
+      page: 'jurisprudencia'
+    },
+
+    {
+      icon: '🎓',
+      title: 'Formación en Democracia',
+      desc: 'Programas educativos y fortalecimiento democrático.',
+      page: 'democracia'
+    }
+
+  ]
+
   return (
+
     <section className={styles.section}>
+
       <div className={styles.sectionHead}>
-        <h2 className={styles.sectionTitle}>Servicios destacados</h2>
+
+        <h2 className={styles.sectionTitle}>
+          Servicios institucionales
+        </h2>
+
       </div>
+
       <div className={styles.quickGrid}>
-        {QUICK_SERVICES.map(s => (
-          <button key={s.title} className={styles.quickCard} onClick={() => setPage(s.page)}>
-            <div className={styles.qcIcon}>{s.icon}</div>
-            <div className={styles.qcTitle}>{s.title}</div>
-            <div className={styles.qcDesc}>{s.desc}</div>
-            <div className={styles.qcArrow}>→</div>
+
+        {services.map(service => (
+
+          <button
+            key={service.title}
+            className={styles.quickCard}
+
+            onClick={() => {
+
+              // CERTIFICACIONES
+              if (service.page === 'certificaciones') {
+
+                setShowCertModal(true)
+                return
+              }
+
+              // DOCUMENTO IDENTIDAD
+              if (service.page === 'identidad') {
+
+                setShowCedulaModal(true)
+                return
+              }
+
+              // SOBRE EL TSE
+              if (service.page === 'tse') {
+
+                setShowTseModal(true)
+                return
+              }
+
+              // RESTO
+              setPage(service.page)
+
+            }}
+          >
+
+            <div className={styles.qcIcon}>
+              {service.icon}
+            </div>
+
+            <div className={styles.qcTitle}>
+              {service.title}
+            </div>
+
+            <div className={styles.qcDesc}>
+              {service.desc}
+            </div>
+
+            <div className={styles.qcArrow}>
+              →
+            </div>
+
           </button>
+
         ))}
+
       </div>
+
+      {/* ─────────────────────────────────────────────
+          MODAL CERTIFICACIONES
+      ───────────────────────────────────────────── */}
+
+      {showCertModal && (
+
+        <div
+          className={styles.popupOverlay}
+          onClick={() => setShowCertModal(false)}
+        >
+
+          <div
+            className={styles.certModal}
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            <button
+              className={styles.closeBtn}
+              onClick={() => setShowCertModal(false)}
+            >
+              ✕
+            </button>
+
+            <div className={styles.certHeader}>
+
+              <img
+                src="/logo-tse.png"
+                alt="TSE"
+                className={styles.certLogo}
+              />
+
+              <div>
+
+                <span className={styles.certMini}>
+                  Tribunal Supremo de Elecciones
+                </span>
+
+                <h2 className={styles.certTitle}>
+                  Certificaciones Digitales
+                </h2>
+
+              </div>
+
+            </div>
+
+            <p className={styles.certText}>
+
+              Ingrese el código de verificación de su certificación digital
+              para validar la autenticidad del documento emitido por el TSE.
+
+            </p>
+
+            <div className={styles.inputGroup}>
+
+              <label>
+                Código de certificación digital
+              </label>
+
+              <input
+                type="text"
+                placeholder="Ejemplo: TSE-2028-CR-000245"
+                value={certCode}
+                onChange={(e) => setCertCode(e.target.value)}
+              />
+
+            </div>
+
+            <button className={styles.searchBtn}>
+              Verificar certificación
+            </button>
+
+          </div>
+
+        </div>
+
+      )}
+
+      {/* ─────────────────────────────────────────────
+          MODAL DOCUMENTO IDENTIDAD
+      ───────────────────────────────────────────── */}
+
+      {showCedulaModal && (
+
+        <div
+          className={styles.popupOverlay}
+          onClick={() => setShowCedulaModal(false)}
+        >
+
+          <div
+            className={styles.identityModal}
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            <button
+              className={styles.closeBtn}
+              onClick={() => setShowCedulaModal(false)}
+            >
+              ✕
+            </button>
+
+            <div className={styles.identityHeader}>
+
+              <img
+                src="/logo-tse.png"
+                alt="TSE"
+                className={styles.certLogo}
+              />
+
+              <div>
+
+                <span className={styles.certMini}>
+                  Tribunal Supremo de Elecciones
+                </span>
+
+                <h2 className={styles.certTitle}>
+                  Nuevo Documento de Identidad
+                </h2>
+
+              </div>
+
+            </div>
+
+            <div className={styles.identityContent}>
+
+              <p className={styles.identityText}>
+
+                Conozca el nuevo diseño de la cédula de identidad.
+
+                El nuevo diseño de la cédula conserva la mayoría de los
+                datos personales que contiene la actual, sin embargo,
+                ya no se incluirán los nombres del padre y la madre
+                de la persona, ni su domicilio electoral.
+
+                La vigencia continuará siendo de 10 años, y mantendrá
+                las dimensiones estándar internacionales
+                (85,60 mm × 53,98 mm),
+                según la norma ISO 7810 ID-1.
+
+              </p>
+
+              <div className={styles.cedulaGallery}>
+
+                <img
+                  src="/cedula1.jpg"
+                  alt="Nueva cédula frontal"
+                  className={styles.cedulaImg}
+                />
+
+                <img
+                  src="/cedula2.jpg"
+                  alt="Nueva cédula reverso"
+                  className={styles.cedulaImg}
+                />
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
+
+      {/* ─────────────────────────────────────────────
+          MODAL SOBRE EL TSE
+      ───────────────────────────────────────────── */}
+
+      {showTseModal && (
+
+        <div
+          className={styles.popupOverlay}
+          onClick={() => setShowTseModal(false)}
+        >
+
+          <div
+            className={styles.certModal}
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            <button
+              className={styles.closeBtn}
+              onClick={() => setShowTseModal(false)}
+            >
+              ✕
+            </button>
+
+            <div className={styles.certHeader}>
+
+              <img
+                src="/logo-tse.png"
+                alt="TSE"
+                className={styles.certLogo}
+              />
+
+              <div>
+
+                <span className={styles.certMini}>
+                  Tribunal Supremo de Elecciones
+                </span>
+
+                <h2 className={styles.certTitle}>
+                  Sobre el TSE
+                </h2>
+
+              </div>
+
+            </div>
+
+            <p className={styles.tseIntro}>
+
+              Conozca información institucional del Tribunal Supremo
+              de Elecciones, planificación estratégica,
+              recursos humanos y rendición de cuentas.
+
+            </p>
+
+            <div className={styles.tseGrid}>
+
+              <div className={styles.tseCard}>
+
+                <div className={styles.cardHeader}>
+                  Conózcanos
+                </div>
+
+                <ul className={styles.tseList}>
+                  <li>¿Qué es el TSE?</li>
+                  <li>Magistraturas</li>
+                  <li>Direcciones</li>
+                  <li>Actas</li>
+                  <li>Organigrama Institucional</li>
+                  <li>Contraloría de Servicios</li>
+                  <li>Contáctenos</li>
+                  <li>Preguntas frecuentes</li>
+                  <li>Visita guiada 360</li>
+                </ul>
+
+              </div>
+
+              <div className={styles.tseCard}>
+
+                <div className={styles.cardHeader}>
+                  Planificación institucional
+                </div>
+
+                <ul className={styles.tseList}>
+                  <li>Planificación estratégica institucional</li>
+                  <li>Plan Estratégico de Tecnologías de Información</li>
+                  <li>Planes Operativos Institucionales</li>
+                  <li>Plan de Mejora Regulatoria 2022</li>
+                  <li>Plan de Mejora Regulatoria 2015</li>
+                  <li>Plan de Ejecución - Auditoría</li>
+                  <li>Ética y Valores</li>
+                </ul>
+
+              </div>
+
+              <div className={styles.tseCard}>
+
+                <div className={styles.cardHeader}>
+                  Recursos Humanos
+                </div>
+
+                <ul className={styles.tseList}>
+                  <li>Estadísticas de personal</li>
+                  <li>Concursos internos</li>
+                  <li>Concursos externos</li>
+                  <li>Registro de elegibles</li>
+                  <li>Puestos y salarios</li>
+                </ul>
+
+              </div>
+
+              <div className={styles.tseCard}>
+
+                <div className={styles.cardHeader}>
+                  Rendición de cuentas
+                </div>
+
+                <ul className={styles.tseList}>
+                  <li>Actas</li>
+                  <li>Informes de labores</li>
+                  <li>Informes de gestión</li>
+                  <li>Informes de gestión CDIR</li>
+                  <li>Informe de desarrollo archivístico</li>
+                  <li>Información financiera y presupuestaria</li>
+                  <li>Auditoría interna</li>
+                  <li>Red de Transparencia</li>
+                  <li>Viajes de funcionarios</li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
+
     </section>
+
   )
 }
-
 // ─── NewsPreview ──────────────────────────────────────────────────────────────
 
 function NewsPreview({ setPage }) {
