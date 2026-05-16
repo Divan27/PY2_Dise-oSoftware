@@ -21,7 +21,7 @@
 }
 
 [data-theme="light"] {
-  --bg: #f0f4ff; --bg2: #e8eef9; --bg3: #dde5f5;
+  --bg: #82c4fa; --bg2: #e8eef9; --bg3: #dde5f5;
   --border: rgba(0,43,127,0.12);
   --text: #0d1a3a; --text2: #334e7a; --muted: #5a6e90; --muted2: #8ba0c0;
   --card-bg: #ffffff; --card-hover: rgba(0,43,127,0.12);
